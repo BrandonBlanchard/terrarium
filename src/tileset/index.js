@@ -1,10 +1,9 @@
-import sprite from '../images/minecraft-sprite.jpg';
+import grassCenter from '../images/rpg-tiles/grass-center.png';
+import dirtCenter from '../images/rpg-tiles/dirt-center.png';
+import waterCenter from '../images/rpg-tiles/water-center.png';
 
 export const defaultTileset = {
-    sprite,
-    row: 16,
-    spriteSize: 16,
-    0: [14,13], // water
-    1: [2, 0], //dirt
-    2: [2,9] // grass
+    0: waterCenter,
+    1: dirtCenter,
+    2: grassCenter,
 };

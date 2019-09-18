@@ -1,15 +1,22 @@
 import React from 'react';
 import './style.scss';
 
+import { getTileEncoding } from '../../utils';
+import { TERRAIN_ENUM } from '../../constants';
+
 const Tile = (props) => {
-    const { tileset, type } = props;
+    const { 
+        tileset,
+        type,
+        index,
+        width,
+        terrain 
+    } = props;
     
-    const x = -tileset.spriteSize * tileset[type][0];
-    const y = -tileset.spriteSize * tileset[type][1];
+    const encoding = getTileEncoding(index, width, terrain);
     
     const styles = {
-        backgroundImage: `url(${tileset.sprite})`,
-        'backgroundPosition': `${x}px ${y}px`
+        background: `url(/tilesets/rpg/${encoding}.png), url(${tileset[type]})`
     };
     
     return (<div className='tile' style={styles}></div>);

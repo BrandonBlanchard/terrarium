@@ -8,7 +8,7 @@ const Grid = (props) => {
     const { terrain, width, tileset } = props;
     
     const map = terrain.reduce((acc, val, i) => {
-         acc.push(<Tile width={width} type={val} tileset={tileset} key={i} />);
+         acc.push(<Tile width={width} index={i} type={val} {...props}  key={i} />);
          
          return acc;
     }, []);
